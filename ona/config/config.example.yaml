@@ -1,0 +1,65 @@
+# =====================================================
+# ONA v1.0 — Functional Configuration
+# Copy to config/config.yaml and adapt.
+# Secrets stay in .env, not here.
+# =====================================================
+
+mission:
+  id: mission_default
+  environment: urban_sar   # urban_sar | fire | mines | nuclear
+  name: "ONA Demo Mission"
+
+radio:
+  backend: simulated       # simulated | serial
+  frequency_hz: 868000000
+  bandwidth_hz: 125000
+  spreading_factor: 9
+  coding_rate: 5
+  tx_power_dbm: 14
+  ack_enabled: true
+  ack_timeout_seconds: 3
+  max_retransmissions: 3
+
+devices:
+  # Registered devices. Unknown sources are rejected.
+  - device_id: "BEACON_01"
+    device_type: "BEACON"
+    protocol: "BEACON_V1"
+    status: "active"
+  - device_id: "WRITER_01"
+    device_type: "WRITER"
+    protocol: "MAVLINK2"
+    status: "active"
+
+coordinate_frames:
+  # Local frame reference (ENU). origin/orientation must be validated.
+  - frame_id: "FRAME_LOCAL_01"
+    type: "ENU"
+    origin_lat: null
+    origin_lon: null
+    origin_alt: null
+    rotation_deg: 0.0
+    validated: false
+
+mqtt:
+  topics:
+    events:    "ona/v1/{mission_id}/events"
+    positions: "ona/v1/{mission_id}/positions"
+    telemetry: "ona/v1/{mission_id}/telemetry"
+    alerts:    "ona/v1/{mission_id}/alerts"
+    status:    "ona/v1/{mission_id}/status"
+    devices:   "ona/v1/{mission_id}/devices"
+
+processing:
+  max_message_age_seconds: 3600
+  duplicate_window_seconds: 86400
+
+outbox:
+  max_retries: 10
+  backoff_base_seconds: 2
+  backoff_max_seconds: 300
+  ttl_seconds: 86400
+
+api:
+  host: "127.0.0.1"
+  port: 8000

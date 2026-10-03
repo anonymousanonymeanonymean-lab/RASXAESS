@@ -1,0 +1,69 @@
+ona/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   └── logging.py
+│   ├── communication/
+│   │   ├── __init__.py
+│   │   ├── radio_interface.py
+│   │   ├── serial_radio.py
+│   │   ├── simulated_radio.py
+│   │   ├── beacon_protocol.py
+│   │   ├── mavlink_handler.py
+│   │   └── mqtt_client.py
+│   ├── processing/
+│   │   ├── __init__.py
+│   │   ├── validator.py
+│   │   ├── normalizer.py
+│   │   ├── deduplicator.py
+│   │   ├── sequence_manager.py
+│   │   ├── coordinate_manager.py
+│   │   ├── event_processor.py
+│   │   └── router.py
+│   ├── database/
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   ├── models.py
+│   │   └── repositories.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── ingestion_service.py
+│   │   ├── outbox_service.py
+│   │   ├── device_service.py
+│   │   └── health_service.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── routes.py
+│   │   └── schemas.py
+│   └── utils/
+│       ├── __init__.py
+│       ├── ids.py
+│       ├── time.py
+│       └── checksums.py
+├── simulator/
+│   ├── __init__.py
+│   ├── beacon_simulator.py
+│   ├── writer_simulator.py
+│   └── command_post_simulator.py
+├── tests/
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── unit/
+│   │   ├── __init__.py
+│   │   └── test_skeleton.py
+│   ├── integration/
+│   │   └── __init__.py
+│   ├── protocol/
+│   │   └── __init__.py
+│   └── system/
+│       └── __init__.py
+├── config/
+│   └── config.example.yaml
+├── .env.example
+├── .gitignore
+├── requirements.txt
+├── README.md
+└── pytest.ini
