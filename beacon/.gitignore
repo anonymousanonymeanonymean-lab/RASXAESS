@@ -1,0 +1,6 @@
+.pio/
+.vscode/
+*.bak
+*.tmp
+logs/
+data/
