@@ -1,0 +1,10 @@
+{
+  "description": "This interactive dashboard enables disaster response teams to monitor and control robotics systems, enhancing situational awareness and decision-making during emergencies.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
